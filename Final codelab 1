@@ -1,0 +1,26 @@
+$ git clone https://github.com/BeetWang/python_blockchain_app.git
+$ cd python_blockchain_app
+$ pip install -r requirements.txt
+$ export FLASK_APP=node_server.py
+$ flask run --port 8000
+set LANG=C.UTF-8
+set FLASK_APP=node_server.py
+$ flask run --port 8000
+$ python run_app.py
+set LANG=C.UTF-8
+set FLASK_APP=run_app.py
+flask run --port 8000
+$ flask run --port 8000 &
+$ flask run --port 8001 &
+$ flask run --port 8002 &
+curl -X POST \
+http://127.0.0.1:8001/register_with \
+-H 'Content-Type: application/json' \
+-d '{"node_address": "http://127.0.0.1:8000"}'
+
+curl -X POST \
+http://127.0.0.1:8002/register_with \
+-H 'Content-Type: application/json' \
+-d '{"node_address": "http://127.0.0.1:8000"}'
+$ curl -X GET http://localhost:8001/chain
+$ curl -X GET http://localhost:8002/chain
